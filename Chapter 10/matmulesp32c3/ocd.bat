@@ -1,0 +1,1 @@
+openocd -f board/esp32c3-builtin.cfg

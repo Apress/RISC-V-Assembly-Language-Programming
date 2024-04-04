@@ -1,0 +1,2 @@
+uppertst: uppertst.c upper.S
+	gcc -o uppertst uppertst.c upper.S

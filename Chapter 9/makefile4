@@ -1,0 +1,17 @@
+LIBOBJS = upper.o
+ 
+all: uppertst3
+ 
+%.o : %.S
+	as $(DEBUGFLGS) $< -o $@
+ 
+libup.so.1.0: $(LIBOBJS)
+	gcc -shared -Wl,-soname,libup.so.1 -o libup.so.1.0: $(LIBOBJS)
+	gcc -shared -Wl,-soname,libup.so.1 -o libup.so.1.0 $(LIBOBJS)
+	mv libup.so.1.0 /usr/local/lib
+	ln -sf /usr/local/lib/libup.so.1.0 /usr/local/lib/libup.so.1
+	ln -sf /usr/local/lib/libup.so.1.0 /usr/local/lib/libup.so
+	ldconfig
+ 
+uppertst3: libup.so.1.0
+	gcc -o uppertst3 uppertst.c -lup
