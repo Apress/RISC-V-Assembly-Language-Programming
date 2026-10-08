@@ -31,13 +31,13 @@ _start:
 	lui	x5, 0x12345	# x5 = 0x1234500000000000
 	addi	x6, x0, 0x678	# x6 = 0x678
 	slli	x6, x6, 32	# x6 = 0x67800000000
-	addi	x5, x5, x6	# x5 = 0x1234567800000000
+	add 	x5, x5, x6	# x5 = 0x1234567800000000
 	addi	x6, x0, 0x90A	# x6 = 0x90A
 	slli	x6, x6, 20	# x6 = 0x90A00000
-	addi 	x5, x5, x6	# x5 = 0x1234567890A00000
+	add  	x5, x5, x6	# x5 = 0x1234567890A00000
 	addi	x6, x0, 0xBCD	# x6 = 0xBCD
 	slli	x6, x6, 8	# x6 = 0xBCD00
-	addi	x5, x5, x6	# x5 = 0x1234567890ABCD00
+	add 	x5, x5, x6	# x5 = 0x1234567890ABCD00
 	addi	x5, x5, 0xEF	# x5 = 0x1234567890ABCDEF
 
 	li	x5, 0x1234567890ABCDEF
